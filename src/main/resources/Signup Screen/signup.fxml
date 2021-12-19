@@ -23,7 +23,7 @@
             <TextField fx:id="regCodeField" layoutX="217.0" layoutY="384.0" promptText="Registration Code" />
             <PasswordField fx:id="pswdfield" layoutX="217.0" layoutY="338.0" promptText="Password" />
             <Text fx:id="promptField" layoutX="218.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="146.13671875" />
-            <Button fx:id="signupbtn" layoutX="312.0" layoutY="446.0" mnemonicParsing="false" text="Signup" />
+            <Button fx:id="signupbtn" layoutX="312.0" layoutY="446.0" mnemonicParsing="false" onAction="#SignupBtnClicked" text="Signup" />
          </children>
       </AnchorPane>
    </center>

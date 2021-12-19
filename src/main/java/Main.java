@@ -26,7 +26,7 @@ public class Main extends Application {
         }
 
        /* LoginDetails person = new LoginDetails();
-        person.setUsername("Ma'a1m Behjat");
+        person.setUsername("Ma'am Behjat");
         person.setPassword("12345");
         session.save(person);*/
 
