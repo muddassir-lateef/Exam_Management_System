@@ -19,22 +19,23 @@ public class Main extends Application {
         Session session  = sf.openSession();
         Transaction trans = session.beginTransaction();
 
-        /*List usrs = session.createQuery("FROM LoginDetails" ).list();
+        List usrs = session.createQuery("FROM LoginDetails" ).list();
         for(Iterator iter = usrs.iterator(); iter.hasNext(); ){
             LoginDetails usr =  (LoginDetails) iter.next();
             System.out.println("usr: " +usr.getUsername());
-        }*/
+        }
 
-        LoginDetails person = new LoginDetails();
+       /* LoginDetails person = new LoginDetails();
         person.setUsername("Ma'am Behjat");
         person.setPassword("12345");
-        session.save(person);
+        session.save(person);*/
 
-        Teacher teacher  = new Teacher();
+        /*Teacher teacher  = new Teacher();
         teacher.setName("Behjat Zuhaira");
         teacher.setLoginDetails(person);
         session.save(teacher);
-        trans.commit();
+        trans.commit();*/
+
         launch();
     }
 

@@ -10,32 +10,33 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class loginController {
+public class SignupController {
 
     @FXML
-    private Button loginBtn;
+    private Button backbtn;
+
+    @FXML
+    private TextField namefield;
 
     @FXML
     private Text promptField;
 
     @FXML
-    private PasswordField pswdField;
+    private PasswordField pswdfield;
 
     @FXML
-    private Button signupBtn;
+    private TextField regCodeField;
 
     @FXML
-    private TextField usrnameField;
+    private Button signupbtn;
 
     @FXML
-    void LoginBtnClicked(ActionEvent event) {
-
-    }
+    private TextField usernamefield;
 
     @FXML
-    void SignUpBtnClicked(ActionEvent event) {
-        Stage stage = (Stage) signupBtn.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Signup Screen/signup.fxml"));
+    void backBtnClicked(ActionEvent event) {
+        Stage stage = (Stage) promptField.getScene().getWindow();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginScreen/login.fxml"));
         Scene scene = null;
         try {
             scene = new Scene(fxmlLoader.load());
@@ -45,10 +46,6 @@ public class loginController {
         stage.setTitle("Examination System");
         stage.setScene(scene);
         stage.show();
-
     }
-
-
-
 
 }

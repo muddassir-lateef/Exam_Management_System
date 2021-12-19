@@ -7,16 +7,15 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginController">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="281.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="loginBtn" layoutX="179.0" layoutY="406.0" mnemonicParsing="false" text="Login" />
-            <TextField fx:id="usrnameField" layoutX="82.0" layoutY="292.0" />
-            <PasswordField fx:id="pswdField" layoutX="82.0" layoutY="338.0" />
+            <Button fx:id="loginBtn" layoutX="179.0" layoutY="406.0" mnemonicParsing="false" onAction="#LoginBtnClicked" text="Login" />
+            <TextField fx:id="usrnameField" layoutX="82.0" layoutY="292.0" promptText="Username" />
+            <PasswordField fx:id="pswdField" layoutX="82.0" layoutY="338.0" promptText="Password" />
             <Text fx:id="promptField" layoutX="82.0" layoutY="390.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="59.13671875" />
-            <Button fx:id="signupBtn" layoutX="82.0" layoutY="406.0" mnemonicParsing="false" text="Signup" />
+            <Button fx:id="signupBtn" layoutX="82.0" layoutY="406.0" mnemonicParsing="false" onAction="#SignUpBtnClicked" text="Signup" />
          </children>
       </AnchorPane>
    </left>

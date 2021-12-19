@@ -7,12 +7,11 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Text?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SignupController">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="356.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="backbtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="70.0" text="Back" />
+            <Button fx:id="backbtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#backBtnClicked" prefHeight="52.0" prefWidth="70.0" text="Back" />
          </children>
       </AnchorPane>
    </left>
