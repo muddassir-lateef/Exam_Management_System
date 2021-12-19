@@ -46,6 +46,6 @@ public class SignupController {
         stage.setTitle("Examination System");
         stage.setScene(scene);
         stage.show();
-    }
+    }///some comment
 
 }
