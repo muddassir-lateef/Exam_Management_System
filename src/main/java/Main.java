@@ -14,23 +14,26 @@ import java.util.List;
 public class Main extends Application {
     public static void main(String[] args){
         Configuration con = new Configuration();
-        con.configure().addAnnotatedClass(User.class);
+        con.configure().addAnnotatedClass(LoginDetails.class);
         SessionFactory sf = con.buildSessionFactory();
         Session session  = sf.openSession();
         Transaction trans = session.beginTransaction();
 
-        List usrs = session.createQuery("FROM User" ).list();
+        /*List usrs = session.createQuery("FROM LoginDetails" ).list();
         for(Iterator iter = usrs.iterator(); iter.hasNext(); ){
-            User usr =  (User) iter.next();
+            LoginDetails usr =  (LoginDetails) iter.next();
             System.out.println("usr: " +usr.getUsername());
-        }
+        }*/
 
-
-        /*User person = new User();
-        person.setUsername("shayanzuberi");
+        LoginDetails person = new LoginDetails();
+        person.setUsername("Ma'am Behjat");
         person.setPassword("12345");
-        session.save(person);*/
+        session.save(person);
 
+        Teacher teacher  = new Teacher();
+        teacher.setName("Behjat Zuhaira");
+        teacher.setLoginDetails(person);
+        session.save(teacher);
         trans.commit();
         launch();
     }

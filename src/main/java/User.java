@@ -1,26 +1,32 @@
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Entity
+@MappedSuperclass
 public class User {
+    @Id @GeneratedValue(strategy= GenerationType.AUTO)
+    private int ID;
 
-    @Id
-    private String username;
-    private String password;
+    @OneToOne
+    private LoginDetails loginDetails;
 
-    public String getUsername() {
-        return username;
+    private String name;
+
+    public int getID() {
+        return ID;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public LoginDetails getLoginDetails() {
+        return loginDetails;
     }
 
-    public String getPassword() {
-        return password;
+    public void setLoginDetails(LoginDetails loginDetails) {
+        this.loginDetails = loginDetails;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
