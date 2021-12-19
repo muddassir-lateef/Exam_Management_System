@@ -26,12 +26,12 @@ public class Main extends Application {
         }
 
        /* LoginDetails person = new LoginDetails();
-        person.setUsername("Ma'am Behjat");
+        person.setUsername("Ma'a1m Behjat");
         person.setPassword("12345");
         session.save(person);*/
 
         /*Teacher teacher  = new Teacher();
-        teacher.setName("Behjat Zuhaira");
+        teacher.setName("Behjat1 Zuhaira");
         teacher.setLoginDetails(person);
         session.save(teacher);
         trans.commit();*/
