@@ -9,5 +9,8 @@
         <module name="Quiz3_Hibernate" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Gui" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

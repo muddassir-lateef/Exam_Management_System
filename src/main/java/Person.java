@@ -1,5 +1,12 @@
+
+import javax.persistence.*;
+
+@Entity
 public class Person {
-    public Car car;
+
+    @OneToOne
+    private Car car;
+    @Id @GeneratedValue
     private int PersonID;
     private String name;
     private String surname;
@@ -9,10 +16,12 @@ public class Person {
     }
 
     public int getPersonID() {
+
         return PersonID;
     }
 
     public void setPersonID(int personID) {
+
         PersonID = personID;
     }
 
@@ -21,6 +30,7 @@ public class Person {
     }
 
     public void setName(String name) {
+
         this.name = name;
     }
 
@@ -29,6 +39,11 @@ public class Person {
     }
 
     public void setSurname(String surname) {
+
         this.surname = surname;
+    }
+
+    public void setCar(Car car2) {
+        car = car2;
     }
 }
