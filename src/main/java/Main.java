@@ -26,9 +26,10 @@ public class Main extends Application {
         }
 
 
-       // User person = new User();
-      //  person.setPassword("123");
-      //  session.save(person);
+        /*User person = new User();
+        person.setUsername("shayanzuberi");
+        person.setPassword("12345");
+        session.save(person);*/
 
         trans.commit();
         launch();
