@@ -13,10 +13,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
 
-public class loginController {
+public class LoginController {
 
     @FXML
     private Button loginBtn;
@@ -47,6 +45,17 @@ public class loginController {
         {
             promptField.setText("Login Successful!");
 
+            Stage stage = (Stage) promptField.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Main Menu (Staff)/staffmenu.fxml"));
+            Scene scene = null;
+            try {
+                scene = new Scene(fxmlLoader.load());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stage.setTitle("Examination System");
+            stage.setScene(scene);
+            stage.show();
         }
         else
         {
