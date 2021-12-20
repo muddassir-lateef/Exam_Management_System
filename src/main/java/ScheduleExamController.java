@@ -87,8 +87,6 @@ public class ScheduleExamController {
             session.save(e);
             trans.commit();
 
-
-
         }
 
 
