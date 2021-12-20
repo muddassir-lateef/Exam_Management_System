@@ -1,7 +1,4 @@
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Exam {
@@ -10,6 +7,26 @@ public class Exam {
     private String Name;
     private String Course;
 
+    @OneToOne
+    private Teacher assignedTeacher=null;
+    @OneToOne
+    private Invigilator assignedInvigilator=null;
+
+    public Invigilator getAssignedInvigilator() {
+        return assignedInvigilator;
+    }
+
+    public void setAssignedInvigilator(Invigilator assignedInvigilator) {
+        this.assignedInvigilator = assignedInvigilator;
+    }
+
+    public Teacher getAssignedTeacher() {
+        return assignedTeacher;
+    }
+
+    public void setAssignedTeacher(Teacher assignedTeacher) {
+        this.assignedTeacher = assignedTeacher;
+    }
 
     public int getId() {
         return Id;
