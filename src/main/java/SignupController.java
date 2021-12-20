@@ -43,16 +43,7 @@ public class SignupController {
     @FXML
     void backBtnClicked(ActionEvent event) {
         Stage stage = (Stage) promptField.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginScreen/login.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Examination System");
-        stage.setScene(scene);
-        stage.show();
+        SceneLoader.loadStage(stage,"LoginScreen/login.fxml");
     }///some comment
 
 
@@ -83,14 +74,17 @@ public class SignupController {
             LoginDetails tempLogin = new LoginDetails();
             tempLogin.setUsername(un);
             tempLogin.setPassword(password);
-            session.save(tempLogin);
             if (regCodeField.getText().equals("121")){
                 //teacher
                 validReg = true;
                 Teacher teacher = new Teacher();
                 teacher.setLoginDetails(tempLogin);
                 teacher.setName(namefield.getText());
+
                 session.save(teacher);
+                tempLogin.setType("Teacher");
+                session.save(tempLogin);
+
                 trans.commit();
             }
             else if (regCodeField.getText().equals("122")){
@@ -100,6 +94,8 @@ public class SignupController {
                 student.setLoginDetails(tempLogin);
                 student.setName(namefield.getText());
                 session.save(student);
+                tempLogin.setType("Student");
+                session.save(tempLogin);
                 trans.commit();
 
             }
@@ -110,6 +106,9 @@ public class SignupController {
                 staff.setLoginDetails(tempLogin);
                 staff.setName(namefield.getText());
                 session.save(staff);
+                tempLogin.setType("Staff");
+                session.save(tempLogin);
+
                 trans.commit();
             }
             else if (regCodeField.getText().equals("124")){
@@ -119,6 +118,9 @@ public class SignupController {
                 inv.setLoginDetails(tempLogin);
                 inv.setName(namefield.getText());
                 session.save(inv);
+                tempLogin.setType("Invigilator");
+                session.save(tempLogin);
+
                 trans.commit();
             }
             else {

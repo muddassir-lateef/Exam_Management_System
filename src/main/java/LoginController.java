@@ -44,18 +44,24 @@ public class LoginController {
         if(usrs!=null)
         {
             promptField.setText("Login Successful!");
-
             Stage stage = (Stage) promptField.getScene().getWindow();
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Main Menu (Staff)/staffmenu.fxml"));
-            Scene scene = null;
-            try {
-                scene = new Scene(fxmlLoader.load());
-            } catch (IOException e) {
-                e.printStackTrace();
+            if(usrs.getType().equals("Staff"))
+            {
+                SceneLoader.loadStage(stage,"Main Menu (Staff)/staffMenu.fxml");
             }
-            stage.setTitle("Examination System");
-            stage.setScene(scene);
-            stage.show();
+            else if(usrs.getType().equals("Teacher"))
+            {
+                SceneLoader.loadStage(stage,"Main Menu (Staff)/teacherMenu.fxml");
+            }
+            else if(usrs.getType().equals("Student"))
+            {
+                SceneLoader.loadStage(stage,"Main Menu (Staff)/studentMenu.fxml");
+            }
+            else if(usrs.getType().equals("Invigilator"))
+            {
+                SceneLoader.loadStage(stage,"Main Menu (Staff)/invigilatorMenu.fxml");
+            }
+
         }
         else
         {
@@ -68,18 +74,8 @@ public class LoginController {
 
     @FXML
     void SignUpBtnClicked(ActionEvent event) {
-        Stage stage = (Stage) signupBtn.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Signup Screen/signup.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Examination System");
-        stage.setScene(scene);
-        stage.show();
-
+        Stage stage = (Stage) promptField.getScene().getWindow();
+        SceneLoader.loadStage(stage,"Signup Screen/signup.fxml");
     }
 
 
