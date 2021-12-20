@@ -34,7 +34,7 @@ public class LoginController {
     private TextField usrnameField;
 
     @FXML
-    void LoginBtnClicked(ActionEvent event) {
+    void LoginBtnClicked(ActionEvent event) throws InvalidLoginException{
         Configuration con = new Configuration();
         con.configure().addAnnotatedClass(LoginDetails.class);
         SessionFactory sf = con.buildSessionFactory();
@@ -82,6 +82,7 @@ public class LoginController {
         else
         {
             promptField.setText("Login Failed!");
+            throw new InvalidLoginException("User does not exits");
 
         }
         trans.commit();
