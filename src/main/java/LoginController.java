@@ -70,7 +70,7 @@ public class LoginController {
                     }
 
                 }
-
+                SceneLoader.loadStage(stage,"Main Menu (Student)/studentMenu.fxml");
 
             }
             else if(usrs.getType().equals("Invigilator"))

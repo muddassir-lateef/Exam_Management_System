@@ -33,7 +33,7 @@ public class StudentMenuController {
 
     @FXML
     void takeExamBtnClicked(ActionEvent event) {
-        loadUI("Main Menu (Student)/Take Exam Screen/takeExam.fxml");
+        loadUI("Main Menu (Student)/Take Exam Screen/selectExam.fxml");
         Singleton obj=Singleton.getInstance();
         obj.borderPane=borderpane;
     }
