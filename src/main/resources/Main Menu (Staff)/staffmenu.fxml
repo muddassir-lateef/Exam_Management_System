@@ -10,34 +10,34 @@
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="220.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox layoutX="12.0" layoutY="150.0" prefHeight="240.0" prefWidth="185.0">
+            <VBox layoutX="10.0" layoutY="230.0" prefHeight="240.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="addExamBtn" mnemonicParsing="false" onAction="#AddExamsClicked" text="Add Exams">
+                  <Button fx:id="addExamBtn" mnemonicParsing="false" onAction="#AddExamsClicked" prefHeight="0.0" prefWidth="160.0" text="Add Exams">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="addVenueBtn" mnemonicParsing="false" onAction="#AddVenueClicked" text="Add Venue">
+                  <Button fx:id="addVenueBtn" mnemonicParsing="false" onAction="#AddVenueClicked" prefHeight="0.0" prefWidth="160.0" text="Add Venue">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="scheduleExamBtn" mnemonicParsing="false" onAction="#ScheduleExamsClicked" text="Schedule Exams">
+                  <Button fx:id="scheduleExamBtn" mnemonicParsing="false" onAction="#ScheduleExamsClicked" prefHeight="0.0" prefWidth="160.0" text="Schedule Exams">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="assignPersonelBtn" mnemonicParsing="false" onAction="#AssignPersonnelClicked" text="Assign Personnel">
+                  <Button fx:id="assignPersonelBtn" mnemonicParsing="false" onAction="#AssignPersonnelClicked" prefHeight="0.0" prefWidth="160.0" text="Assign Personnel">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="viewFeedbackBtn" mnemonicParsing="false" onAction="#viewFeedbackClicked" text="View Exam Feedback">
+                  <Button fx:id="viewFeedbackBtn" mnemonicParsing="false" onAction="#viewFeedbackClicked" prefHeight="0.0" prefWidth="160.0" text="View Exam Feedback">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="viewCodesBtn" mnemonicParsing="false" onAction="#viewCodesClicked" text="View Registration Codes">
+                  <Button fx:id="viewCodesBtn" mnemonicParsing="false" onAction="#viewCodesClicked" prefHeight="0.0" prefWidth="160.0" text="View Registration Codes">
                      <VBox.margin>
                         <Insets left="30.0" top="10.0" />
                      </VBox.margin>

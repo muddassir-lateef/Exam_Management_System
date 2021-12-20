@@ -68,6 +68,7 @@ public class StaffMenuController {
         }
         catch (IOException ex)
         {
+            System.out.println(ex.getMessage());
 
         }
         borderpane.setCenter(root);
