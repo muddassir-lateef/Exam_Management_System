@@ -12,9 +12,9 @@
       <Button fx:id="scheduleBtn" layoutX="386.0" layoutY="405.0" mnemonicParsing="false" onAction="#scheduleBtnClicked" prefHeight="25.0" prefWidth="96.0" text="Schedule" />
       <Text fx:id="addVenueLabel" layoutX="416.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule Exam" wrappingWidth="83.13671875" />
       <Label layoutX="308.0" layoutY="276.0" text="Exams: " />
-      <ComboBox layoutX="371.0" layoutY="272.0" prefHeight="25.0" prefWidth="174.0" />
+      <ComboBox fx:id="examsComboBox" layoutX="371.0" layoutY="272.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="301.0" layoutY="318.0" text="Venues: " />
-      <ComboBox layoutX="371.0" layoutY="314.0" prefHeight="25.0" prefWidth="174.0" />
+      <ComboBox fx:id="venueComboBox" layoutX="371.0" layoutY="314.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="308.0" layoutY="360.0" prefHeight="17.0" prefWidth="39.0" text="Date: " />
       <DatePicker fx:id="date" layoutX="371.0" layoutY="356.0" />
    </children>

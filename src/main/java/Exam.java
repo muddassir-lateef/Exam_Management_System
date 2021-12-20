@@ -6,6 +6,10 @@ public class Exam {
     private int Id;
     private String Name;
     private String Course;
+    private String date;
+
+    @OneToOne
+    private Venue venue=null;
 
     @OneToOne
     private Teacher assignedTeacher=null;
@@ -20,6 +24,21 @@ public class Exam {
         this.assignedInvigilator = assignedInvigilator;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public Venue getVenue() {
+        return venue;
+    }
+
+    public void setVenue(Venue venue) {
+        this.venue = venue;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
     public Teacher getAssignedTeacher() {
         return assignedTeacher;
     }
