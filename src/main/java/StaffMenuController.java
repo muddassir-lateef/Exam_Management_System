@@ -38,26 +38,30 @@ public class StaffMenuController {
 
     @FXML
     void AddVenueClicked(ActionEvent event) {
-
+        loadUI("Main Menu (Staff)/Add Venue Screen/addVenue.fxml");
     }
 
     @FXML
     void AssignPersonnelClicked(ActionEvent event) {
+        loadUI("Main Menu (Staff)/Assign Personnel Screen/assignPersonnel.fxml");
 
     }
 
     @FXML
     void ScheduleExamsClicked(ActionEvent event) {
+        loadUI("Main Menu (Staff)/Schedule Exam Screen/scheduleExam.fxml");
 
     }
 
     @FXML
     void viewCodesClicked(ActionEvent event) {
+        loadUI("Main Menu (Staff)/View Registration Codes Screen/registrationCodes.fxml");
 
     }
 
     @FXML
     void viewFeedbackClicked(ActionEvent event) {
+        loadUI("Main Menu (Staff)/View Exam FeedBack Screen/examFeedback.fxml");
 
     }
     private void loadUI(String path){
