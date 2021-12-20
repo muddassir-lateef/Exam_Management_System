@@ -34,8 +34,9 @@ public class SubmitFeedbackController {
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction trans = session.beginTransaction();
+        Singleton obj=Singleton.getInstance();
 
-        int invID = 6;  //set this from singleton variable
+        int invID = obj.currInv.getID();  //set this from singleton variable
         List exams = session.createQuery("FROM Exam where assignedInvigilator.ID = :temp").setParameter("temp", invID).list();
         for (Iterator iter = exams.iterator(); iter.hasNext(); ) {
 

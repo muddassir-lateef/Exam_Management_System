@@ -55,8 +55,9 @@ public class RegisterExamController {
             String[] temp1 = examsDropdown.getValue().split(". ");
             int eid=Integer.parseInt(temp1[0]);
             Exam ex = (Exam)session.createQuery("FROM Exam where Id = :tempID").setParameter("tempID", eid).uniqueResult();
-
-            int id = 3; ///set this from singleton variable
+            Singleton obj=Singleton.getInstance();
+            int id=obj.currStud.getID();
+            //int id = 3; ///set this from singleton variable
             Student stu = (Student) session.createQuery("FROM Student where ID = : tempID").setParameter("tempID", id).uniqueResult();
 
             stu.addExam(ex);

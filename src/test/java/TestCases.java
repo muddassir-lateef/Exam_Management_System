@@ -18,7 +18,6 @@ import static org.junit.Assert.assertEquals;
 
 public class TestCases {
 
-    @Test
     public void Login() {
         Configuration con = new Configuration();
         con.configure().addAnnotatedClass(Exam.class);

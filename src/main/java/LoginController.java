@@ -75,6 +75,20 @@ public class LoginController {
             }
             else if(usrs.getType().equals("Invigilator"))
             {
+
+                Singleton obj=Singleton.getInstance();
+
+                List inv = session.createQuery("FROM Invigilator").list();
+                for (Iterator iter = inv.iterator(); iter.hasNext(); ) {
+
+                    Invigilator exm = (Invigilator) iter.next();
+                    if(exm.getLoginDetails().getUsername().equals(usrnameField.getText()))
+                    {
+                        obj.currInv=exm;
+
+                    }
+
+                }
                 SceneLoader.loadStage(stage,"Main Menu (Invigilator)/invigilatorMenu.fxml");
             }
 

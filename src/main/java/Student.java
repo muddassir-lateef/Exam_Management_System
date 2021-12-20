@@ -1,5 +1,6 @@
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.List;
 
 @Entity
@@ -7,6 +8,18 @@ public class Student extends User{
 
     @OneToMany
     private List<Exam> exams;
+
+    public List<Result> getResults() {
+        return results;
+    }
+
+    public void setResults(List<Result> results) {
+        this.results = results;
+    }
+
+    @OneToMany
+    private  List<Result> results;
+
 
     public void addExam(Exam e){
         exams.add(e);

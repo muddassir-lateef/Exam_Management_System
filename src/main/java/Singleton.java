@@ -6,6 +6,7 @@ public class Singleton {
     // Declaring a variable of type String
     Exam exam;
     Student currStud;
+    Invigilator currInv;
     BorderPane borderPane;
 
     private Singleton()
