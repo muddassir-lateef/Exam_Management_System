@@ -24,12 +24,18 @@ public class TakeExamController {
 
     @FXML
     private Label questionNumberField;
+    @FXML
+    private Label prompt;
 
     @FXML
     private TextArea statementArea;
 
     @FXML
     private Button submitBtn;
+    List<Question> questions=null;
+    int n=0;
+    int correct=0;
+
     @FXML
     public void initialize() {
 
@@ -37,27 +43,51 @@ public class TakeExamController {
 
        // typeComboBox.setItems(options);
 
+
+        Singleton obj=Singleton.getInstance();
+
+        questions=obj.exam.getQuestion();
+        statementArea.setText(questions.get(n).getStatement());
+        questionNumberField.setText((n+1)+" ");
         ObservableList<String> options1 = FXCollections.observableArrayList();
-        Configuration con = new Configuration();
-        con.configure().addAnnotatedClass(Exam.class);
-        SessionFactory sf = con.buildSessionFactory();
-        Session session = sf.openSession();
-        Transaction trans = session.beginTransaction();
-        List exams = session.createQuery("FROM Exam").list();
-        for (Iterator iter = exams.iterator(); iter.hasNext(); ) {
+        List<Option> op=questions.get(n).getOptions();
+        for(int i=0;i<op.size();i++)
+        {
+           options1.add(op.get(i).getStatement());
+       }
+        optionComboBox.setItems(options1);
 
-            Exam exm = (Exam) iter.next();
-            options1.add(exm.getId() + ". " + exm.getName());
 
-        }
-        trans.commit();
-
-  //      ExamsComboBox.setItems(options1);
 
 
     }
+
+
     @FXML
     void nextBtnClicked(ActionEvent event) {
+        Singleton obj=Singleton.getInstance();
+
+        questions=obj.exam.getQuestion();
+        if(questions.get(n).getCorrectOption().equals(optionComboBox.getValue()))
+        {
+            correct++;
+        }
+        if(questions.size()==n+1)
+        {
+            prompt.setText("All Questions Answered.");
+        }
+        else {
+            n++;
+            questions = obj.exam.getQuestion();
+            statementArea.setText(questions.get(n).getStatement());
+            questionNumberField.setText((n + 1) + " ");
+            ObservableList<String> options1 = FXCollections.observableArrayList();
+            List<Option> op = questions.get(n).getOptions();
+            for (int i = 0; i < op.size(); i++) {
+                options1.add(op.get(i).getStatement());
+            }
+            optionComboBox.setItems(options1);
+        }
 
     }
 

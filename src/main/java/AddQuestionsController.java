@@ -78,6 +78,7 @@ public class AddQuestionsController {
 
         }
         correctOptComboBox.setItems(corOps);
+        optionField.setText(" ");
 
     }
 
@@ -110,6 +111,12 @@ public class AddQuestionsController {
             e.addQuestion(q);
            session.save(e);
            trans.commit();
+            ObservableList<String> corOps=FXCollections.observableArrayList();
+            correctOptComboBox.setItems(corOps);
+
+
+           options.clear();
+           statementArea.setText(" ");
         }
 
 
