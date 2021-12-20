@@ -27,7 +27,7 @@ public class TestCases {
         Transaction trans = session.beginTransaction();
         Student stu = (Student)session.createQuery("FROM Student where ID = 3").uniqueResult();
         assertEquals(stu.getName().equals("Student"), true);
-
+//
     }
 
     @Test
