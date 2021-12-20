@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ResultsController">
+   <children>
+      <TableView fx:id="resultsTable" layoutX="317.0" layoutY="151.0" prefHeight="362.0" prefWidth="381.0">
+        <columns>
+          <TableColumn prefWidth="149.0" text="Exam" />
+          <TableColumn prefWidth="139.0" text="Percentage" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
