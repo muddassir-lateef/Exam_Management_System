@@ -89,9 +89,17 @@ public class ExamFeedbackController {
 
         Exam exam = (Exam)session.createQuery("FROM Exam where Id = :temp").setParameter("temp", eid).uniqueResult();
 
-        Feedback fb= (Feedback) session.createQuery("FROM Feedback where exam.Id = :temp").setParameter("temp", exam.getId()).uniqueResult();
+        List fb=  session.createQuery("FROM Feedback where exam.Id = :temp").setParameter("temp", exam.getId()).list();
 
-        feedbackField.setText(fb.getFeedbackStatement());
+        String temp="";
+        for (Iterator iter = fb.iterator(); iter.hasNext(); ) {
+
+            temp+='\n';
+            Feedback f = (Feedback) iter.next();
+            temp += f.getFeedbackStatement();
+
+        }
+        feedbackField.setText(temp);
 
 
 
