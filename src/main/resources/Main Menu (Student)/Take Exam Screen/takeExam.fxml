@@ -12,7 +12,7 @@
       <Button fx:id="submitBtn" layoutX="335.0" layoutY="428.0" mnemonicParsing="false" onAction="#submitBtnClicked" prefHeight="25.0" prefWidth="389.0" text="Submit" />
       <Label layoutX="187.0" layoutY="163.0" text="Question number: " />
       <Label fx:id="questionNumberField" layoutX="291.0" layoutY="163.0" />
-      <ComboBox layoutX="334.0" layoutY="325.0" prefWidth="150.0" />
+      <ComboBox fx:id="optionComboBox" layoutX="334.0" layoutY="325.0" prefWidth="150.0" />
       <Label layoutX="187.0" layoutY="329.0" text="Options: " />
       <Label layoutX="501.0" layoutY="112.0" text="Take Exam" />
       <Button fx:id="nextBtn" layoutX="334.0" layoutY="358.0" mnemonicParsing="false" onAction="#nextBtnClicked" prefHeight="25.0" prefWidth="150.0" text="Next Question" />

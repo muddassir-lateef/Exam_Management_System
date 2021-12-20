@@ -13,6 +13,8 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
 
 public class LoginController {
 
@@ -55,7 +57,21 @@ public class LoginController {
             }
             else if(usrs.getType().equals("Student"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Student)/studentMenu.fxml");
+                Singleton obj=Singleton.getInstance();
+
+                List students = session.createQuery("FROM Student").list();
+                for (Iterator iter = students.iterator(); iter.hasNext(); ) {
+
+                    Student exm = (Student) iter.next();
+                    if(exm.getLoginDetails().getUsername().equals(usrnameField.getText()))
+                    {
+                        obj.currStud=exm;
+
+                    }
+
+                }
+
+
             }
             else if(usrs.getType().equals("Invigilator"))
             {
