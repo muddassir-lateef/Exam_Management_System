@@ -51,15 +51,15 @@ public class LoginController {
             }
             else if(usrs.getType().equals("Teacher"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Staff)/teacherMenu.fxml");
+                SceneLoader.loadStage(stage,"Main Menu (Teacher)/teacherMenu.fxml");
             }
             else if(usrs.getType().equals("Student"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Staff)/studentMenu.fxml");
+                SceneLoader.loadStage(stage,"Main Menu (Student)/studentMenu.fxml");
             }
             else if(usrs.getType().equals("Invigilator"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Staff)/invigilatorMenu.fxml");
+                SceneLoader.loadStage(stage,"Main Menu (Invigilator)/invigilatorMenu.fxml");
             }
 
         }
