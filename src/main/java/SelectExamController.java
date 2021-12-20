@@ -65,7 +65,7 @@ public class SelectExamController {
             Singleton obj=Singleton.getInstance();
             obj.exam=e;
             trans.commit();
-
+            loadUI("Main Menu (Student)/Take Exam Screen/takeExam.fxml");
         }
 
     }
