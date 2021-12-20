@@ -1,4 +1,6 @@
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Exam {
@@ -16,10 +18,16 @@ public class Exam {
     @OneToOne
     private Invigilator assignedInvigilator=null;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Question> question;
+
     public Invigilator getAssignedInvigilator() {
         return assignedInvigilator;
     }
-
+    public Exam()
+    {
+        question=new ArrayList<Question>();
+    }
     public void setAssignedInvigilator(Invigilator assignedInvigilator) {
         this.assignedInvigilator = assignedInvigilator;
     }
@@ -38,6 +46,12 @@ public class Exam {
 
     public void setDate(String date) {
         this.date = date;
+    }
+    public List<Question> getQuestion() {
+        return question;
+    }
+    public void addQuestion(Question q) {
+        this.question.add(q);
     }
     public Teacher getAssignedTeacher() {
         return assignedTeacher;
