@@ -16,6 +16,6 @@
       <Label layoutX="301.0" layoutY="318.0" text="Venues: " />
       <ComboBox layoutX="371.0" layoutY="314.0" prefHeight="25.0" prefWidth="174.0" />
       <Label layoutX="308.0" layoutY="360.0" prefHeight="17.0" prefWidth="39.0" text="Date: " />
-      <DatePicker layoutX="371.0" layoutY="356.0" />
+      <DatePicker fx:id="date" layoutX="371.0" layoutY="356.0" />
    </children>
 </AnchorPane>
