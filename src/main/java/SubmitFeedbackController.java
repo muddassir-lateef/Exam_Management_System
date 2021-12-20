@@ -30,13 +30,13 @@ public class SubmitFeedbackController {
     public void initialize() {
         ObservableList<String> options1 = FXCollections.observableArrayList();
         Configuration con = new Configuration();
-        con.configure().addAnnotatedClass(Exam.class);
+        con.configure().addAnnotatedClass(Invigilator.class);
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction trans = session.beginTransaction();
 
         int invID = 6;  //set this from singleton variable
-        List exams = session.createQuery("FROM Exam where assignedInvigilator.ID = :invID").list();
+        List exams = session.createQuery("FROM Exam where assignedInvigilator.ID = :temp").setParameter("temp", invID).list();
         for (Iterator iter = exams.iterator(); iter.hasNext(); ) {
 
             Exam exm = (Exam) iter.next();
@@ -52,10 +52,31 @@ public class SubmitFeedbackController {
     @FXML
     void selectExamClicked(ActionEvent event) {
 
+
     }
 
     @FXML
     void submitBtnClicked(ActionEvent event) {
+        Configuration con = new Configuration();
+        con.configure().addAnnotatedClass(Feedback.class);
+        SessionFactory sf = con.buildSessionFactory();
+        Session session = sf.openSession();
+        Transaction trans = session.beginTransaction();
+
+        String[] temp1 = examsDropdown.getValue().split(". ");
+        int eid=Integer.parseInt(temp1[0]);
+        Exam exam = (Exam)session.createQuery("FROM Exam where Id = :temp").setParameter("temp", eid).uniqueResult();
+
+        int invID = 6;  //set this from singeton variable
+        Invigilator inv = (Invigilator) session.createQuery("FROM Invigilator where ID = :temp").setParameter("temp", invID).uniqueResult();
+
+        Feedback feedback = new Feedback();
+        feedback.setFeedbackStatement(statementArea.getText());
+        feedback.setExam(exam);
+        feedback.setInvigilator(inv);
+        session.save(feedback);
+        trans.commit();
+
 
     }
 
