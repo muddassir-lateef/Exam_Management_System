@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddExamController">
+<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddVenueController">
    <children>
       <TextField fx:id="nameField" layoutX="311.0" layoutY="276.0" promptText="Name" />
-      <TextField fx:id="courseField" layoutX="311.0" layoutY="319.0" promptText="Course" />
+      <TextField fx:id="addressField" layoutX="311.0" layoutY="319.0" promptText="Address" />
       <Button layoutX="338.0" layoutY="384.0" mnemonicParsing="false" onAction="#addBtnClicked" prefHeight="25.0" prefWidth="96.0" text="Add" />
-      <Text layoutX="355.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Exam" wrappingWidth="157.13671875" />
+      <Text fx:id="addVenueLabel" layoutX="355.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Venue" wrappingWidth="157.13671875" />
    </children>
 </AnchorPane>

@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddExamController">
+<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExamFeedbackController">
    <children>
-      <Text layoutX="129.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Exam" wrappingWidth="293.13671875" />
+      <TextField fx:id="invigilatorField" editable="false" layoutX="344.0" layoutY="325.0" promptText="Invigilator" />
+      <Button fx:id="ViewBtn" layoutX="390.0" layoutY="587.0" mnemonicParsing="false" onAction="#viewBtnClicked" prefHeight="25.0" prefWidth="96.0" text="View" />
+      <Text fx:id="addVenueLabel" layoutX="338.0" layoutY="255.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exam Feedback" wrappingWidth="157.13671875" />
+      <Label layoutX="278.0" layoutY="275.0" text="Exams: " />
+      <ComboBox fx:id="examsComboBox" layoutX="343.0" layoutY="271.0" prefWidth="150.0" />
+      <Label layoutX="278.0" layoutY="329.0" text="Invigilator:" />
+      <Button fx:id="examSelectBtn" layoutX="503.0" layoutY="271.0" mnemonicParsing="false" onAction="#examSelectBtnClicked" text="Select" />
+      <Label layoutX="278.0" layoutY="399.0" text="Feedback: " />
+      <TextArea fx:id="feedbackField" layoutX="338.0" layoutY="369.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
