@@ -4,6 +4,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
@@ -20,16 +21,12 @@ public class InvigilatorMenuController {
     @FXML
     private Button viewDutiesBtn;
 
-    @FXML
-    private Button logoutbtn;
 
-
-    @FXML
-    void logOutBtnClicked(ActionEvent event) {
+    public void logOutBtnClicked(MouseEvent mouseEvent) {
         Stage stage = (Stage) borderpane.getScene().getWindow();
         Main.loadStage(stage,"LoginScreen/login.fxml");
-    }
 
+    }
 
     @FXML
     void submitFeedbackBtnClicked(ActionEvent event) {

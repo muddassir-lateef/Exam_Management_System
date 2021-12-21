@@ -104,8 +104,14 @@ public class TakeExamController {
 
         Singleton obj=Singleton.getInstance();
         Result result = new Result();
-        n++;
-        result.setAttempted(n);
+        if (n==0){
+            questions=obj.exam.getQuestion();
+            if(questions.get(n).getCorrectOption().equals(optionComboBox.getValue()))
+            {
+                correct++;
+            }
+        }
+        result.setAttempted(obj.exam.getQuestion().size());
         result.setCorrect(correct);
         result.setExamID(obj.exam.getId());
         result.setStudentID(obj.currStud.getID());

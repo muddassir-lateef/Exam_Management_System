@@ -6,11 +6,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane fx:id="borderpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TeacherMenuController">
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="220.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="logoutbtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutBtnClicked" text="Log out" />
             <VBox layoutX="10.0" layoutY="230.0" prefHeight="240.0" prefWidth="200.0">
                <children>
                   <Button fx:id="addQuestionBtn" mnemonicParsing="false" onAction="#AddQuestionsClicked" prefHeight="0.0" prefWidth="160.0" text="Add Questions">
@@ -20,6 +21,11 @@
                   </Button>
                </children>
             </VBox>
+            <ImageView fx:id="logOutBtn" fitHeight="48.0" fitWidth="49.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#logOutBtnClicked" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logOut.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
    </left>
 </BorderPane>
