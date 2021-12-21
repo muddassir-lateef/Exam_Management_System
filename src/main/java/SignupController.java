@@ -43,7 +43,7 @@ public class SignupController {
     @FXML
     void backBtnClicked(ActionEvent event) {
         Stage stage = (Stage) promptField.getScene().getWindow();
-        SceneLoader.loadStage(stage,"LoginScreen/login.fxml");
+        Main.loadStage(stage,"LoginScreen/login.fxml");
     }///some comment
 
 
@@ -128,17 +128,7 @@ public class SignupController {
             }
             if(!exists && validReg) {
                 promptField.setText("Registration Successful!!");
-                /*Stage stage = (Stage) promptField.getScene().getWindow();
-                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginScreen/login.fxml"));
-                Scene scene = null;
-                try {
-                    scene = new Scene(fxmlLoader.load());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                stage.setTitle("Examination System");
-                stage.setScene(scene);
-                stage.show();*/
+
             }
 
         }

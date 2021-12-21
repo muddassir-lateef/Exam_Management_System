@@ -32,18 +32,8 @@ public class StudentMenuController {
 
     @FXML
     void logOutBtnClicked(ActionEvent event) {
-        Stage stage = (Stage)logoutbtn.getScene().getWindow();
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginScreen/login.fxml"));
-        Scene scene = null;
-        try {
-            scene = new Scene(fxmlLoader.load());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        stage.setTitle("Examination System");
-        stage.setScene(scene);
-        stage.show();
-
+        Stage stage = (Stage) borderpane.getScene().getWindow();
+        Main.loadStage(stage,"LoginScreen/login.fxml");
     }
 
 
