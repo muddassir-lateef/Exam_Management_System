@@ -57,25 +57,6 @@ public class ExamFeedbackController {
     }
 
     @FXML
-    void examSelectBtnClicked(ActionEvent event) {
-        String[] temp1 = examsComboBox.getValue().split(". ");
-        int eid=Integer.parseInt(temp1[0]);
-
-        ObservableList<String> options1 = FXCollections.observableArrayList();
-        Configuration con = new Configuration();
-        con.configure().addAnnotatedClass(Invigilator.class);
-        SessionFactory sf = con.buildSessionFactory();
-        Session session = sf.openSession();
-        Transaction trans = session.beginTransaction();
-
-        Exam exam = (Exam)session.createQuery("FROM Exam where Id = :temp").setParameter("temp", eid).uniqueResult();
-
-        invigilatorField.setText(exam.getAssignedInvigilator().getName());
-
-
-    }
-
-    @FXML
     void viewBtnClicked(ActionEvent event) {
         ObservableList<String> options1 = FXCollections.observableArrayList();
         Configuration con = new Configuration();
@@ -99,9 +80,8 @@ public class ExamFeedbackController {
             temp += f.getFeedbackStatement();
 
         }
+        invigilatorField.setText(exam.getAssignedInvigilator().getName());
         feedbackField.setText(temp);
-
-
 
 
     }
