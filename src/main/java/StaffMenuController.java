@@ -77,6 +77,7 @@ public class StaffMenuController {
         try{
             root=FXMLLoader.load(getClass().getResource(path));
 
+
         }
         catch (IOException ex)
         {
@@ -84,6 +85,7 @@ public class StaffMenuController {
 
         }
         borderpane.setCenter(root);
+
     }
 
     public void logOutBtnClicked(MouseEvent mouseEvent) {

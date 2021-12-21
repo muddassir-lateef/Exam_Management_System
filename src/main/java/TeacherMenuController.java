@@ -23,7 +23,11 @@ public class TeacherMenuController {
         Main.loadStage(stage,"LoginScreen/login.fxml");
 
     }
+    @FXML
+    void initialize()
+    {
 
+    }
     @FXML
     void AddQuestionsClicked(ActionEvent event) {
         loadUI("Main Menu (Teacher)/Add Questions Screen/addQuestions.fxml");
