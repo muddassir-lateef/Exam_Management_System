@@ -109,6 +109,7 @@ public class TakeExamController {
         result.setCorrect(correct);
         result.setExamID(obj.exam.getId());
         result.setStudentID(obj.currStud.getID());
+        result.setExamID(obj.exam.getId());
         session.save(result);
         obj.currStud.addResult(result);
         trans.commit();

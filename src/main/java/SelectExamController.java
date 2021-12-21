@@ -34,14 +34,30 @@ public class SelectExamController {
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction trans = session.beginTransaction();
+
         Singleton obj=Singleton.getInstance();
         int id=obj.currStud.getID();
+
+        List results = session.createQuery("FROM Result where studentID = :temp").setParameter("temp", id).list();
+
+
         Student stu = (Student) session.createQuery("FROM Student where ID = : tempID").setParameter("tempID", id).uniqueResult();
         List exams = stu.getExams();
         for (Iterator iter = exams.iterator(); iter.hasNext(); ) {
 
             Exam exm = (Exam) iter.next();
-            options1.add(exm.getId() + ". " + exm.getName());
+            boolean hasGiven = false;
+            for (Iterator iter2 = results.iterator(); iter2.hasNext(); ) {
+
+                Result res = (Result) iter2.next();
+                if (exm.getId() == res.getExamID()){
+                    hasGiven = true;
+                }
+            }
+
+            if(! hasGiven) {
+                options1.add(exm.getId() + ". " + exm.getName());
+            }
 
         }
         trans.commit();
