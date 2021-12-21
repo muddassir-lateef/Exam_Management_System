@@ -27,7 +27,7 @@ public class Main extends Application {
       //  FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginScreen/login.fxml"));
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen/login.fxml"));
         stage.initStyle(StageStyle.TRANSPARENT);
-        root.setStyle("-fx-background-radius: 6;" );
+        root.setStyle("-fx-background-radius: 6;-fx-background-color: rgb(256, 256, 256), rgb(256, 256, 256);" );
         stage.setTitle("Examination System");
       //  stage.initStyle(StageStyle.UNDECORATED);
 
@@ -59,8 +59,9 @@ public class Main extends Application {
     {
         try {
 
-
             Parent root = FXMLLoader.load(Main.class.getResource(path));
+            //stage.initStyle(StageStyle.TRANSPARENT);
+            root.setStyle("-fx-background-radius: 6;-fx-background-color: rgb(256, 256, 256), rgb(256, 256, 256);" );
             stage.setTitle("Examination System");
             root.setOnMousePressed(new EventHandler<MouseEvent>() {
                 @Override
@@ -79,6 +80,7 @@ public class Main extends Application {
                 }
             });
             Scene scene = new Scene(root);
+            scene.setFill(Color.TRANSPARENT);
             stage.setScene(scene);
 
             stage.show();

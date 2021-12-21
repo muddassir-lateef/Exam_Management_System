@@ -34,6 +34,15 @@ public class LoginController {
     private TextField usrnameField;
 
     @FXML
+    private Button closeBtn;
+
+    @FXML
+    void CloseBtnClicked(ActionEvent event) {
+        Stage stage = (Stage) closeBtn.getScene().getWindow();
+        stage.close();
+    }
+
+    @FXML
     void LoginBtnClicked(ActionEvent event) throws InvalidLoginException{
         Configuration con = new Configuration();
         con.configure().addAnnotatedClass(LoginDetails.class);
