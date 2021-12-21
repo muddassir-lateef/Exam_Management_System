@@ -9,7 +9,9 @@ public class Result {
     int id;
     int correct;
     int attempted;
-    String Exam;
+
+    int examID;
+    int studentID;
 
 
     public int getId() {
@@ -36,11 +38,19 @@ public class Result {
         this.attempted = attempted;
     }
 
-    public String getExam() {
-        return Exam;
+    public int getExamID() {
+        return examID;
     }
 
-    public void setExam(String exam) {
-        Exam = exam;
+    public void setExamID(int examID) {
+        this.examID = examID;
+    }
+
+    public int getStudentID() {
+        return studentID;
+    }
+
+    public void setStudentID(int studentID) {
+        this.studentID = studentID;
     }
 }
