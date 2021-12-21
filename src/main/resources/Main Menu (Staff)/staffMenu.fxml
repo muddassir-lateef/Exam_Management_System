@@ -10,7 +10,6 @@
    <left>
       <AnchorPane prefHeight="700.0" prefWidth="220.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="logoutbtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#logOutBtnClicked" text="Log out" />
             <VBox layoutX="10.0" layoutY="230.0" prefHeight="240.0" prefWidth="200.0">
                <children>
                   <Button fx:id="addExamBtn" mnemonicParsing="false" onAction="#AddExamsClicked" prefHeight="0.0" prefWidth="160.0" text="Add Exams">
@@ -46,6 +45,8 @@
                   </Button>
                </children>
             </VBox>
+
+
          </children></AnchorPane>
    </left>
 </BorderPane>

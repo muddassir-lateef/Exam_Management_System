@@ -7,6 +7,8 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import javax.swing.text.html.ImageView;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class StaffMenuController {
@@ -32,16 +34,6 @@ public class StaffMenuController {
     @FXML
     private Button viewFeedbackBtn;
 
-    @FXML
-    private Button logoutbtn;
-
-
-    @FXML
-    void logOutBtnClicked(ActionEvent event) {
-        Stage stage = (Stage) borderpane.getScene().getWindow();
-        Main.loadStage(stage,"LoginScreen/login.fxml");
-
-    }
 
 
 
