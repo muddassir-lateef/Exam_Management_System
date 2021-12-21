@@ -30,10 +30,12 @@ public class StudentMenuController {
     private Button logoutbtn;
 
 
+
     @FXML
     void logOutBtnClicked(ActionEvent event) {
         Stage stage = (Stage) borderpane.getScene().getWindow();
         Main.loadStage(stage,"LoginScreen/login.fxml");
+
     }
 
 
