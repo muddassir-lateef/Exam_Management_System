@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddExamController">
    <children>
-      <ImageView fitHeight="637.0" fitWidth="780.0" layoutX="-3.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="700.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@background.png" />
          </image>

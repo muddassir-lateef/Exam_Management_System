@@ -5,11 +5,18 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ExamFeedbackController">
    <children>
+      <ImageView fitHeight="700.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@background.png" />
+         </image>
+      </ImageView>
       <TextField fx:id="invigilatorField" editable="false" layoutX="338.0" layoutY="325.0" prefHeight="25.0" prefWidth="200.0" promptText="Invigilator" />
       <Button fx:id="ViewBtn" layoutX="390.0" layoutY="587.0" mnemonicParsing="false" onAction="#viewBtnClicked" prefHeight="25.0" prefWidth="96.0" text="View" />
       <Text fx:id="addVenueLabel" layoutX="390.0" layoutY="244.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Exam Feedback" wrappingWidth="96.0" />
