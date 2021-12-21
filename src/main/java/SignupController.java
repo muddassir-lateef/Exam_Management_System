@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.hibernate.Session;
@@ -20,7 +22,7 @@ import java.util.List;
 public class SignupController {
 
     @FXML
-    private Button backbtn;
+    private ImageView backbtn;
 
     @FXML
     private TextField namefield;
@@ -41,12 +43,10 @@ public class SignupController {
     private TextField usernamefield;
 
     @FXML
-    void backBtnClicked(ActionEvent event) {
+    void backBtnClicked(MouseEvent event) {
         Stage stage = (Stage) promptField.getScene().getWindow();
         Main.loadStage(stage,"LoginScreen/login.fxml");
-    }///some comment
-
-
+    }
     @FXML
     void SignupBtnClicked(ActionEvent event) {
 
