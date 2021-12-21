@@ -13,6 +13,9 @@ public class Exam {
     @OneToOne
     private Venue venue=null;
 
+    @ManyToMany @Column
+    private List<Student> stud;
+
     @OneToOne
     private Teacher assignedTeacher=null;
     @OneToOne
@@ -20,6 +23,7 @@ public class Exam {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<Question> question;
+
 
     public Invigilator getAssignedInvigilator() {
         return assignedInvigilator;
@@ -83,5 +87,14 @@ public class Exam {
 
     public void setCourse(String course) {
         Course = course;
+    }
+
+
+    public List<Student> getStud() {
+        return stud;
+    }
+
+    public void addStudent(Student stud) {
+        this.stud.add(stud);
     }
 }

@@ -8,6 +8,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.exception.ConstraintViolationException;
 
 import java.util.Iterator;
 import java.util.List;
@@ -46,7 +47,7 @@ public class RegisterExamController {
         if(examsDropdown.getValue() != null) {
 
             Configuration con = new Configuration();
-            con.configure().addAnnotatedClass(Exam.class);
+            con.configure().addAnnotatedClass(Student.class);
             SessionFactory sf = con.buildSessionFactory();
             Session session = sf.openSession();
             Transaction trans = session.beginTransaction();
@@ -58,10 +59,14 @@ public class RegisterExamController {
             Singleton obj=Singleton.getInstance();
             int id=obj.currStud.getID();
             //int id = 3; ///set this from singleton variable
+            //System.out.println("IDD:  " + id);
             Student stu = (Student) session.createQuery("FROM Student where ID = : tempID").setParameter("tempID", id).uniqueResult();
 
             stu.addExam(ex);
+            ex.addStudent(stu);
+            //session.save(stu);
             trans.commit();
+
         }
 
     }

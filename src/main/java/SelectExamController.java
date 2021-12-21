@@ -34,7 +34,10 @@ public class SelectExamController {
         SessionFactory sf = con.buildSessionFactory();
         Session session = sf.openSession();
         Transaction trans = session.beginTransaction();
-        List exams = session.createQuery("FROM Exam").list();
+        Singleton obj=Singleton.getInstance();
+        int id=obj.currStud.getID();
+        Student stu = (Student) session.createQuery("FROM Student where ID = : tempID").setParameter("tempID", id).uniqueResult();
+        List exams = stu.getExams();
         for (Iterator iter = exams.iterator(); iter.hasNext(); ) {
 
             Exam exm = (Exam) iter.next();

@@ -1,12 +1,11 @@
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
 public class Student extends User{
 
-    @OneToMany
+    @ManyToMany
+    @Column(unique = false)
     private List<Exam> exams;
 
     public List<Result> getResults() {

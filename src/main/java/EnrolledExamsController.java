@@ -22,7 +22,9 @@ public class EnrolledExamsController {
         Session session = sf.openSession();
         Transaction trans = session.beginTransaction();
 
-        int id = 3; ///set this from singleton variable
+        Singleton obj=Singleton.getInstance();
+        int id=obj.currStud.getID();
+       // int id = 3; ///set this from singleton variable
         Student stu = (Student) session.createQuery("FROM Student where ID = : tempID").setParameter("tempID", id).uniqueResult();
         List<Exam> temp = stu.getExams();
         for (int i=0; i<temp.size(); i++){
