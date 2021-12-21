@@ -49,11 +49,11 @@ public class LoginController {
             Stage stage = (Stage) promptField.getScene().getWindow();
             if(usrs.getType().equals("Staff"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Staff)/staffMenu.fxml");
+                Main.loadStage(stage,"Main Menu (Staff)/staffMenu.fxml");
             }
             else if(usrs.getType().equals("Teacher"))
             {
-                SceneLoader.loadStage(stage,"Main Menu (Teacher)/teacherMenu.fxml");
+                Main.loadStage(stage,"Main Menu (Teacher)/teacherMenu.fxml");
             }
             else if(usrs.getType().equals("Student"))
             {
@@ -70,7 +70,7 @@ public class LoginController {
                     }
 
                 }
-                SceneLoader.loadStage(stage,"Main Menu (Student)/studentMenu.fxml");
+                Main.loadStage(stage,"Main Menu (Student)/studentMenu.fxml");
 
             }
             else if(usrs.getType().equals("Invigilator"))
@@ -89,7 +89,7 @@ public class LoginController {
                     }
 
                 }
-                SceneLoader.loadStage(stage,"Main Menu (Invigilator)/invigilatorMenu.fxml");
+                Main.loadStage(stage,"Main Menu (Invigilator)/invigilatorMenu.fxml");
             }
 
         }
@@ -106,7 +106,7 @@ public class LoginController {
     @FXML
     void SignUpBtnClicked(ActionEvent event) {
         Stage stage = (Stage) promptField.getScene().getWindow();
-        SceneLoader.loadStage(stage,"Signup Screen/signup.fxml");
+        Main.loadStage(stage,"Signup Screen/signup.fxml");
     }
 
 
