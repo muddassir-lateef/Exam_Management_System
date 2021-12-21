@@ -56,6 +56,7 @@ public class SelectExamController {
         if (examComboBox.getValue() != null )
         {
 
+
             String[] temp1 = examComboBox.getValue().split(". ");
             int eid=Integer.parseInt(temp1[0]);
 

@@ -27,4 +27,8 @@ public class Student extends User{
     public List<Exam> getExams() {
         return exams;
     }
+
+    public void addResult(Result res){
+        this.results.add(res);
+    }
 }
