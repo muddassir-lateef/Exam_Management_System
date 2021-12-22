@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="RegistrationCodesController">
+<AnchorPane prefHeight="700.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.RegistrationCodesController">
    <children>
       <ImageView fitHeight="700.0" fitWidth="780.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -15,7 +15,7 @@
       </ImageView>
       <Text fx:id="regCodesLabel" layoutX="329.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registration Codes" wrappingWidth="157.13671875" />
       <Label layoutX="329.0" layoutY="297.0" text="Teacher:" />
-      <Label layoutX="328.0" layoutY="323.0" text="Student: " />
+      <Label layoutX="327.0" layoutY="323.0" text="Student: " />
       <Label layoutX="329.0" layoutY="350.0" text="Staff: " />
       <Label layoutX="329.0" layoutY="376.0" text="Invigilator:" />
       <Label layoutX="404.0" layoutY="297.0" text="121" />
